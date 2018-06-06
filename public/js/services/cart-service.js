@@ -25,6 +25,7 @@ function CartService($http) {
     };
 
     const editItem = (item) => {
+        console.log(item);
         return $http({
             method: "PUT",
             url: "/list/cart/" + item.id,

@@ -11,23 +11,39 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #e1e1e1;
 }
 
 #container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: 3rem;
+    padding: 2rem 4rem;
+    background-color: turquoise;
+    color: firebrick;
+    border: 1px dotted black;
+}
+
+p {
+    margin: 1rem;
 }
 
 section {
     padding: 20px;
-    background-color: red;
+    background-color: thistle;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     position: relative;
+    box-shadow: 12px 12px 10px -5px black;
 }
 
 .header_text {
@@ -55,7 +71,14 @@ section {
 }
 
 .edit_form {
-    background-color: teal;
+    background-color: transparent;
     position: fixed;
     top: 50%;
+}
+
+input {
+    padding: 1rem;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 10px;
 }

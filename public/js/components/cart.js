@@ -3,6 +3,8 @@
 const cart = {
     template: `
     <div id="container">
+        <h2>Shopping List</h1>
+        <p>Edit or Remove</p>
         <section ng-repeat="item in $ctrl.cartList">
             <h1 class="header_text">{{ item.name }}</h1>
             <p class="list_info">Name: {{ item.name }} | Price: {{ item.price }} | Quantity: {{ item.quantity }}</p>
@@ -10,10 +12,10 @@ const cart = {
                 <button class="button" ng-click="$ctrl.editItem(item);">Edit</button>
                 <button class="button" ng-click="$ctrl.removeItem(item.id)";>Delete</button>
             </div>
-            <form ng-show="$ctrl.show" class="edit_form">
-                <input type="text" ng-model="item.name">
-                <input type="text" ng-model="item.price">
-                <input type="text" ng-model="item.quantity">
+            <form ng-show="$ctrl.show" ng-blur="vm.show = false;" class="edit_form">
+                <input type="text" ng-model="$ctrl.editCart.name">
+                <input type="text" ng-model="$ctrl.editCart.price">
+                <input type="text" ng-model="$ctrl.editCart.quantity">
             </form>
         </section>
     </div>
@@ -46,9 +48,10 @@ const cart = {
                 vm.show = true;
             }
             CartService.editItem(item).then((response) => {
-                vm.cartList = response.data;
+                vm.editCart = item;
             })
         }
+
     }]
 }
 
