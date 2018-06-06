@@ -46,13 +46,18 @@ section {
     box-shadow: 12px 12px 10px -5px black;
 }
 
+section:hover {
+    animation-name: example;
+    animation-duration: 1s;
+}
+
 .header_text {
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .list_info {
-    background-color: #f1f1f1;
+    background-color: bisque;
     padding: 2rem;
 }
 
@@ -81,4 +86,11 @@ input {
     border: 1px solid black;
     outline: none;
     border-radius: 10px;
+}
+
+@keyframes example {
+    0%   {transform: translateX(0);}
+    25%  {transform: translateX(25%);}
+    50%  {transform: translateX(-25%);}
+    100% {transform: translateX(0);}
 }
