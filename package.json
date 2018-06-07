@@ -1,0 +1,25 @@
+{
+  "name": "express_server_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smithms91/Express_Server_Lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smithms91/Express_Server_Lab/issues"
+  },
+  "homepage": "https://github.com/smithms91/Express_Server_Lab#readme"
+}
