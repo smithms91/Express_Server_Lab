@@ -3,16 +3,7 @@
 const cart = {
     template: `
     <div id="container">
-        <div class="top_section">
-            <form class="add_form" ng-submit="$ctrl.addItem($ctrl.newItem)">
-                <input type="text" placeholder="Product" ng-model="$ctrl.newItem.product">
-                <input type="number" placeholder="Price" ng-model="$ctrl.newItem.price">
-                <input type="number" placeholder="Quantity" ng-model="$ctrl.newItem.quantity">
-                <button class="button">Add</button>
-            </form>
-            <h2>Shopping List</h1>
-            <p>Add, Edit or Remove</p>
-        </div>
+        <top-container add-item="$ctrl.addItem(newItem)" new-item="$ctrl.newItem"></top-container>
         <div class="section_container">
             <section ng-repeat="item in $ctrl.cartList">
                 <div class="item_box">
@@ -45,14 +36,10 @@ const cart = {
     `,
     controller: ["CartService", function(CartService) {
         const vm = this;
-        vm.show = false;
-        vm.currentItem;
         //Get
         CartService.getAllItems().then((response) => {
-            console.log(response);
             vm.cartList = response.data;
         });
-
 
         //Remove
         vm.removeItem = (id) => {
@@ -65,7 +52,7 @@ const cart = {
             CartService.addItem(newItem).then((response) => {
                 vm.cartList = response.data;
             });
-            vm.newItem = {};
+            vm.newItem = {};    
         };
         //Edit
         vm.editItem = (item) => {

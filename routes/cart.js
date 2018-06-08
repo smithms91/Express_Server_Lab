@@ -30,7 +30,6 @@ cartRouter.post("/cart", (req, res) => {
 cartRouter.put("/cart/:id", (req, res) => {
     pool.query("UPDATE shoppingcart SET product=$1::text, price=$2::int, quantity=$3::int WHERE id=$4::int", [req.body.product, req.body.price, req.body.quantity, req.params.id]).then(() => {
         pool.query("SELECT * FROM shoppingcart ORDER BY id").then((result) => {
-            console.log(result.rows);
             res.send(result.rows);
         })
     })
