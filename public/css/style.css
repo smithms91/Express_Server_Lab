@@ -149,14 +149,14 @@ input {
 }
 
 @keyframes fadeRight {
-    0%   {transform: translateX(-50%);}
-    100% {transform: translateX(0);}
+    0%   {transform: translateX(-50%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 100%;}
 }
 @keyframes fadeLeft {
-    0%   {transform: translateX(100%);}
-    100% {transform: translateX(0);}
+    0%   {transform: translateX(100%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 100%;}
 }
 @keyframes fadeTop {
-    0%   {transform: translateY(500%);}
-    100% {transform: translateX(0);}
+    0%   {transform: translateY(500%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 100%;}
 }
