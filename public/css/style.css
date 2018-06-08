@@ -91,6 +91,7 @@ section {
 .button {
     padding: 1rem;
     border-radius: 3px;
+    cursor: pointer;
     margin-top: 20px;
 }
 
@@ -130,10 +131,13 @@ label {
 }
 
 .increment_button {
-    padding: .25rem;
-    border-radius: 3px;
+    padding: .25rem .5rem;
+    border-radius: 100%;
     margin: 0 10px;
     float: right;
+    color: white;
+    background-color: #F73F4B;
+    cursor: pointer;
 }
 
 input {

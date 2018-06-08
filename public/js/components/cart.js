@@ -2,25 +2,24 @@
 
 const cart = {
     template: `
-    
     <div id="container">
-    <div class="top_section">
-        <form class="add_form" ng-submit="$ctrl.addItem($ctrl.newItem)">
-            <input type="text" placeholder="Product" ng-model="$ctrl.newItem.product">
-            <input type="number" placeholder="Price" ng-model="$ctrl.newItem.price">
-            <input type="number" placeholder="Quantity" ng-model="$ctrl.newItem.quantity">
-            <button class="button">Add</button>
-        </form>
-        <h2>Shopping List</h1>
-        <p>Add, Edit or Remove</p>
-    </div>
+        <div class="top_section">
+            <form class="add_form" ng-submit="$ctrl.addItem($ctrl.newItem)">
+                <input type="text" placeholder="Product" ng-model="$ctrl.newItem.product">
+                <input type="number" placeholder="Price" ng-model="$ctrl.newItem.price">
+                <input type="number" placeholder="Quantity" ng-model="$ctrl.newItem.quantity">
+                <button class="button">Add</button>
+            </form>
+            <h2>Shopping List</h1>
+            <p>Add, Edit or Remove</p>
+        </div>
         <div class="section_container">
             <section ng-repeat="item in $ctrl.cartList">
                 <div class="item_box">
                     <h1 class="header_text">{{ item.product }}</h1>
-                    <p>Name: {{ item.product }}</p>
-                    <p>Price: {{ item.price }}</p>
-                    <p>Quantity: {{ item.quantity }}
+                    <p><strong>Name:</strong> {{ item.product }}</p>
+                    <p><strong>Price:</strong> {{ item.price }}</p>
+                    <p><strong>Quantity:</strong> {{ item.quantity }}
                     <button class="increment_button" ng-click="$ctrl.incrementUp(item);">+</button>
                     <button class="increment_button" ng-click="$ctrl.incrementDown(item);">-</button>
                     </p>
@@ -53,6 +52,8 @@ const cart = {
             console.log(response);
             vm.cartList = response.data;
         });
+
+
         //Remove
         vm.removeItem = (id) => {
             CartService.removeItem(id).then((response) => {
@@ -64,6 +65,7 @@ const cart = {
             CartService.addItem(newItem).then((response) => {
                 vm.cartList = response.data;
             });
+            vm.newItem = {};
         };
         //Edit
         vm.editItem = (item) => {

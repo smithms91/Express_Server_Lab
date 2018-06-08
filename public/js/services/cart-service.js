@@ -1,7 +1,8 @@
 "use strict";
 
 function CartService($http) {
-    
+    let newProduct = {};
+
     const getAllItems = () => {
         return $http({
             method: "GET",
@@ -32,11 +33,22 @@ function CartService($http) {
         });
     };
 
+    const sendData = (newItem) => {
+        newProduct = newItem;
+    }
+
+    const getData = () => {
+        console.log(newProduct);
+        return newProduct;
+    }
+
     return {
         getAllItems,
         removeItem,
         addItem,
-        editItem
+        editItem,
+        sendData,
+        getData
     };
 }
 
